@@ -6,19 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
     <script src="main.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/dd256763f8.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="content">
-      <div class="display">
-        <div id="humidity">Humidity:</div>
-        <div id="temperature">Temperature:</div>
-        <div id="weather">Weather:</div>
-      </div>
+    <header>
       <div>
-        <label for="search-bar">Location</label>
-        <input type="text" name="search-bar" id="search-bar" />
-        <button>Press</button>
+        <i class="fa-solid fa-bolt"></i>
+        <h1>Current weather</h1>
+        <i class="fa-solid fa-bolt"></i>
       </div>
+      <span></span>
+    </header>
+    <div class="content">
+      <div class="search">
+        <div class="location-div">
+          <label for="search-bar">Enter desired location</label>
+          <input type="text" name="search-bar" id="search-bar" required />
+        </div>
+        <div class="temperature-div">
+          <p>Select temperature unit:</p>
+          <input type="radio" name="units" id="celsius" value="celsius" />
+          <label for="celsius">Celsius</label>
+          <input type="radio" name="units" id="fahrenheit" value="fahrenheit" />
+          <label for="fahrenheit">Fahrenheit</label>
+        </div>
+        <button>Search</button>
+      </div>
+      <div class="display">
+        <div class="display-box">
+          <div id="weather">Weather:</div>
+          <img src="#" alt="" id="current-weather" />
+        </div>
+      </div>
+      <div class="display-box display-humidity">
+        <div class="box-main-text" id="humidity">Humidity:</div>
+        <span class="box-sub-text" id="current-humidity"></span>
+      </div>
+      <div class="display-box display-temperature">
+        <div class="box-main-text" id="temperature">Temperature:</div>
+        <span class="box-sub-text" id="current-temperature"></span>
+      </div>
+      <div class="display-box display-weather"></div>
     </div>
   </body>
 </html>

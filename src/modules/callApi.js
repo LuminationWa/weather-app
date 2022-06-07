@@ -1,15 +1,14 @@
 const callApi = (() => {
-  async function getWeather(location) {
+  async function getWeather(location, units) {
+    // Taking the location first gets the coordinates and then passes it along the temperature units to the second function
+    // Returns the full forecast data
     const coordData = await getCoordinates(location);
-    console.log(coordData);
-    const forecastData = await getForecast(coordData, "imperial");
-    console.log(forecastData);
+    const forecastData = await getForecast(coordData, units);
     return forecastData;
   }
 
-  // d6237b0ff90db62d4bfe937ee462dad7
-
   async function getCoordinates(location) {
+    // Gets the coordinates from a location
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=d6237b0ff90db62d4bfe937ee462dad7`,
       { mode: "cors" }
